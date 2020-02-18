@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body{
@@ -11,42 +12,94 @@ body{
     box-sizing: border-box;
     max-width: 89%;
     margin: auto;
-    background-color: lawngreen;
+
 }
 
 
 nav{
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     height: 50px;
     padding-left: 5px;
 }
 
-.lavy_nav{
+.lavy_nav, .pravy_nav{
     flex:1;
+
 }
 
 .lavy_nav ul{
     float: left;
     list-style: none;
+    padding-bottom: 4px;
+    padding-left: 10px;
+
+}
+
+.lavy_nav ul li{
+    text-align: center;
+    display: inline-block;
 }
 
 .lavy_nav ul li a{
     margin: 0 5px 0 5px;
-    background-color: lightblue;
-}
-
-.pravy_nav{
-    flex: 1;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
 }
 
 .pravy_nav ul{
     float: right;
+    list-style: none;
+    padding-bottom: 4px;
+    padding-right: 10px;
+}
+
+.pravy_nav ul li{
+    margin-left: 35px;
+    display: inline-block;
+}
+
+.pravy_nav ul li:first-child{
+    margin-left: 0;
+}
+
+.pravy_nav ul li a{
+    margin: 0 3px 0 3px;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+}
+
+.fa-user-circle{
+    font-size: 13px;
+}
+
+.fa-chevron-down{
+    font-size: 0.6rem;
+}
+
+.podtrznik{
+    position: relative;
+    margin: 0 auto;
+    top: 1px;
+    border-radius: 20%;
+    height: 2px;
+    width: 0%;
+    background-color: black;
+}
+
+nav ul li:hover .podtrznik{
+    width:90%;
+}
+
+i{
+    cursor: pointer;
 }
 
 nav img{
-
-    height: 25px;
+    height: 23px;
 }
 
 main img{
@@ -57,7 +110,7 @@ width: 100%;
     background-image: url(./img/RE1Eyde.webp);
     background-size: cover;
     max-height: 600px;
-    min-height: 370px;
+    min-height: 360px;
     width: 100%;
     float: top;
     margin-top: 2px;
