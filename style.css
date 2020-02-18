@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+body{
+    max-width: 1800px;
+    margin: auto;
+}
+
+.wrapper{
+    box-sizing: border-box;
+    max-width: 89%;
+    margin: auto;
+    background-color: lawngreen;
+}
+
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 5px;
+}
+
+.lavy_nav{
+    flex:1;
+}
+
+.lavy_nav ul{
+    float: left;
+    list-style: none;
+}
+
+.lavy_nav ul li a{
+    margin: 0 5px 0 5px;
+    background-color: lightblue;
+}
+
+.pravy_nav{
+    flex: 1;
+}
+
+.pravy_nav ul{
+    float: right;
+}
+
+nav img{
+
+    height: 25px;
+}
+
+main img{
+width: 100%;
+}
+
+.top-banner{
+    background-image: url(./img/RE1Eyde.webp);
+    background-size: cover;
+    max-height: 600px;
+    min-height: 370px;
+    width: 100%;
+    float: top;
+    margin-top: 2px;
+}
