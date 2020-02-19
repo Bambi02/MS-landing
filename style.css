@@ -10,11 +10,11 @@ body{
 
 .wrapper{
     box-sizing: border-box;
-    max-width: 89%;
+    max-width: 90%;
     margin: auto;
-
 }
 
+/*  ==================== TOP MENU ========================  */
 
 nav{
     box-sizing: border-box;
@@ -24,41 +24,52 @@ nav{
     padding-left: 5px;
 }
 
+nav img{
+    height: 23px;
+    width: 108px;
+    padding: 16px 6px 16px 5px;
+}
+
 .lavy_nav, .pravy_nav{
     flex:1;
-
 }
+
+/* ---------- lava nav ----------*/
 
 .lavy_nav ul{
     float: left;
     list-style: none;
     padding-bottom: 4px;
-    padding-left: 10px;
-
+    padding-left: 15px;
 }
 
 .lavy_nav ul li{
+    padding: 0 10px 0 10px;
     text-align: center;
     display: inline-block;
 }
 
 .lavy_nav ul li a{
-    margin: 0 5px 0 5px;
     font-size: 13px;
     color: black;
     text-decoration: none;
 }
 
+/* ------------ prava nav ----------*/
+
 .pravy_nav ul{
     float: right;
     list-style: none;
-    padding-bottom: 4px;
+    padding-bottom: 11px;
     padding-right: 10px;
 }
 
 .pravy_nav ul li{
-    margin-left: 35px;
+    position: relative;
+    margin-left: 45px;
+    text-align: center;
     display: inline-block;
+    padding: 10px 0;
 }
 
 .pravy_nav ul li:first-child{
@@ -72,13 +83,23 @@ nav{
     text-decoration: none;
 }
 
-.fa-user-circle{
-    font-size: 13px;
+/* ------------ dropdown menu -----------------*/
+
+.dropdown-menu{
+    position: absolute;
+    display: block;
+    background-color: darkgray;
+    flex-direction: column;
+    left:-640px;
+    top:45px;
+    border-bottom: black 2px solid;
 }
 
-.fa-chevron-down{
-    font-size: 0.6rem;
+.dropdown-top{
+    display: flex;
 }
+
+/* ------------ podtrznik animacia ----------*/
 
 .podtrznik{
     position: relative;
@@ -91,16 +112,45 @@ nav{
 }
 
 nav ul li:hover .podtrznik{
-    width:90%;
+    width:95%;
 }
+
+/* ------------- ikony pravy nav --------------*/
 
 i{
     cursor: pointer;
+    position: absolute;
+    top: 15px;
+    font-size: 15px;
 }
 
-nav img{
-    height: 23px;
+.fa-chevron-down{
+    font-size: 0.6rem;
+    top: 21px;
+    color: darkgray;
+    right:-11px;
 }
+
+.fa-user-circle{
+    color: darkgray;
+    position: relative;
+    top: 5px;
+    right: -5px;
+    font-size: 29px;
+    padding-top: px;
+}
+
+.fa-search{
+    right: -20px;
+    color: gray;
+}
+
+.fa-opencart{
+    right:-22px;
+    color: gray;
+}
+
+/*  ==================== VRCHNY BANNER ===================== */
 
 main img{
 width: 100%;
@@ -112,6 +162,5 @@ width: 100%;
     max-height: 600px;
     min-height: 360px;
     width: 100%;
-    float: top;
     margin-top: 2px;
 }
