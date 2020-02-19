@@ -14,7 +14,7 @@ body{
     margin: auto;
 }
 
-/*  ==================== TOP MENU ========================  */
+/*  ================================= TOP MENU =========================================  */
 
 nav{
     box-sizing: border-box;
@@ -85,18 +85,66 @@ nav img{
 
 /* ------------ dropdown menu -----------------*/
 
+.pravy_nav ul li:first-child:hover .dropdown-menu{
+    display: block;
+    
+}
+
 .dropdown-menu{
     position: absolute;
-    display: block;
-    background-color: darkgray;
+    display: none;
+    box-sizing: border-box;
+    background-color:rgb(243, 243, 243);
     flex-direction: column;
-    left:-640px;
+    left:-730px;
     top:45px;
     border-bottom: black 2px solid;
+    width: 1230px;
+    z-index: 100;
 }
 
 .dropdown-top{
     display: flex;
+}
+
+.dropdown-stlpec h3{
+    padding: 18px 30px 18px 24px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    width: 141px;
+}
+
+.dropdown-stlpec ul{
+    padding: 0;
+    text-align: left;
+}
+
+.dropdown-stlpec ul li{
+    margin: 0;
+    padding: 12px 0px 12px 24px;
+    text-align: left;
+    min-width: 141px;
+}
+
+.dropdown-stlpec a:hover{
+    text-decoration: underline;
+}
+
+.dropdown-bot{
+    height: 38px;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-bot a{
+    text-transform: uppercase;
+}
+
+.dropdown-bot a:hover{
+    text-decoration: underline;
 }
 
 /* ------------ podtrznik animacia ----------*/
@@ -150,17 +198,43 @@ i{
     color: gray;
 }
 
-/*  ==================== VRCHNY BANNER ===================== */
+/*  ==================================== VRCHNY BANNER ==================================== */
 
-main img{
-width: 100%;
+.top-banner img{
+    position: relative;
+    width: 100%;
 }
 
 .top-banner{
-    background-image: url(./img/RE1Eyde.webp);
-    background-size: cover;
-    max-height: 600px;
-    min-height: 360px;
+    position: relative;
     width: 100%;
     margin-top: 2px;
+}
+
+.top-popis{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 7%;
+    color: white;
+    padding-bottom: 25px;;
+}
+
+.top-popis h1{
+    font-size: 3rem;
+    margin-bottom: 15px;;
+}
+
+.top-popis p{
+    margin-bottom: 30px;
+}
+
+.top-popis a{
+    text-decoration: none;
+    padding: 10px 35px;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+
 }
