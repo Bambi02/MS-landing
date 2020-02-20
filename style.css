@@ -209,7 +209,10 @@ i{
     position: relative;
     width: 100%;
     margin-top: 2px;
+    cursor: pointer;
 }
+
+/* ------------------popis top banner -----------------*/
 
 .top-popis{
     position:absolute;
@@ -229,12 +232,287 @@ i{
     margin-bottom: 30px;
 }
 
+/* ------------------ tlacitko ----------------------*/
+
 .top-popis a{
     text-decoration: none;
-    padding: 10px 35px;
+    padding: 11px 45px 9px 25px;
     background-color: white;
     color: black;
     text-transform: uppercase;
     font-weight: 600;
+    transition: linear all 0.1s;
+}
 
+.top-popis i{
+    position: absolute;
+    color: black;
+    top: 131px;
+    left: 80px;
+    z-index: 5;
+    font-size: 1.2rem;
+    transition: linear all 0.1s;
+}
+
+.top-popis a:hover{
+    background-color: rgb(241, 240, 240) ;
+    text-decoration: underline 2px;
+    padding: 11px 50px 9px 20px;
+
+}
+
+.top-popis a:hover i{
+    transform: translateX(30%);
+}
+
+/* ---------------------- lavy + pravy button ----------------*/
+
+.top-banner:hover button{
+    display: block;
+}
+
+.top-banner button{
+    display: none;
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(46, 46, 46);
+}
+
+.top-banner button:hover{
+    background-color: rgb(70, 70, 70);
+}
+
+.top-banner button i{
+    position: relative;
+    font-size: 2rem;
+    z-index: 5;
+    color: white;
+    top: 0;
+    left: 0;
+}
+
+.pravy{
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.lavy{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+/* =================== PRVY PANEL S KARTAMI ==================*/
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.card{
+    flex: 20%;
+    margin: 0 13px;
+}
+
+.card:first-child{
+    margin-left: 0;
+}
+
+.card:last-child{
+    margin-right: 0;
+}
+
+.card img{
+width: 100%;
+}
+
+.card h3{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.card p{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover img{
+    opacity: 0.9;
+}
+
+.card a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 103, 184);
+}
+
+.card a:hover{
+    text-decoration: underline 2px;
+}
+
+.card i{
+    position: relative;
+    font-size: 1.2rem;
+    top: 1px;
+    left: 15px;
+    transition: linear all 0.1s;
+}
+
+.card a:hover i{
+    transform: translateX(40%);
+}
+
+/* ==================== SPODNY BANNER ====================*/
+
+.bot-banner img{
+    position: relative;
+    width: 100%;
+}
+
+.bot-banner{
+    position: relative;
+    width: 100%;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+/* ------------------popis top banner -----------------*/
+
+.bot-popis{
+    width: 35%;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 7%;
+    color: black;
+    padding-bottom: 25px;;
+}
+
+.bot-popis h1{
+    font-size: 3rem;
+    margin-bottom: 15px;;
+}
+
+.bot-popis p{
+    margin-bottom: 30px;
+}
+
+/* ------------------ tlacitko ----------------------*/
+
+.bot-popis a{
+    text-decoration: none;
+    padding: 12px 45px 10px 25px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: linear all 0.1s;
+}
+
+.bot-popis i{
+    position: absolute;
+    color: white;
+    top: 195px;
+    left: 115px;
+    z-index: 5;
+    font-size: 1.2rem;
+    transition: linear all 0.1s;
+}
+
+.bot-popis a:hover{
+    text-decoration: underline 2px;
+    padding: 12px 50px 10px 20px;
+}
+
+.bot-popis a:hover i{
+    transform: translateX(30%);
+}
+
+/* ====================================== SPODNE KARTY ==================================*/
+
+.prefirmu{
+    margin-bottom: 20px;
+}
+
+.cards2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.card2{
+    flex: 20%;
+    margin: 0 13px;
+    margin-top: 52px;
+}
+
+.card2:first-child{
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.card2:last-child{
+    margin-right: 0;
+}
+
+.card2 img{
+width: 100%;
+}
+
+.card2 h3{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.card2 p{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.card2:hover {
+    cursor: pointer;
+}
+
+.card2:hover img{
+    opacity: 0.9;
+}
+
+.card2 a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 103, 184);
+}
+
+.card2 a:hover{
+    text-decoration: underline 2px;
+}
+
+.card2 i{
+    position: relative;
+    font-size: 1.2rem;
+    top: 1px;
+    left: 15px;
+    transition: linear all 0.1s;
+}
+
+.card2 a:hover i{
+    transform: translateX(40%);
 }
