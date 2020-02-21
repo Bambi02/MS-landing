@@ -3,25 +3,16 @@
     font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-body{
-    max-width: 1800px;
-    margin: auto;
-}
-
-.wrapper{
-    box-sizing: border-box;
-    max-width: 90%;
-    margin: auto;
-}
-
 /*  ================================= TOP MENU =========================================  */
 
 nav{
-    box-sizing: border-box;
+    max-width: 1600px;
+    padding: 0 95px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     height: 50px;
-    padding-left: 5px;
+  
 }
 
 nav img{
@@ -203,13 +194,16 @@ i{
 .top-banner img{
     position: relative;
     width: 100%;
+    cursor: pointer;
 }
 
 .top-banner{
+    max-width: 1600px;
+    padding: 0 95px;
+    margin: 0 auto;
     position: relative;
-    width: 100%;
     margin-top: 2px;
-    cursor: pointer;
+
 }
 
 /* ------------------popis top banner -----------------*/
@@ -218,7 +212,7 @@ i{
     position:absolute;
     top:50%;
     transform: translateY(-50%);
-    left: 7%;
+    left: 180px;
     color: white;
     padding-bottom: 25px;;
 }
@@ -278,7 +272,6 @@ i{
     width: 44px;
     border-radius: 50%;
     border: none;
-    cursor: pointer;
     background-color: rgb(46, 46, 46);
 }
 
@@ -298,18 +291,21 @@ i{
 .pravy{
     top: 50%;
     transform: translateY(-50%);
-    right: 0;
+    right: 95px;
 }
 
 .lavy{
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
+    left: 95px;
 }
 
 /* =================== PRVY PANEL S KARTAMI ==================*/
 
 .cards{
+    max-width: 1600px;
+    padding: 0 95px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -376,7 +372,7 @@ width: 100%;
     transform: translateX(40%);
 }
 
-/* ==================== SPODNY BANNER ====================*/
+/* ========================= SPODNY BANNER ======================*/
 
 .bot-banner img{
     position: relative;
@@ -384,20 +380,22 @@ width: 100%;
 }
 
 .bot-banner{
+    max-width: 1600px;
+    padding: 0 95px;
+    margin: 0 auto;
     position: relative;
-    width: 100%;
     margin-top: 2px;
     cursor: pointer;
 }
 
-/* ------------------popis top banner -----------------*/
+/* ------------------popis bot banner -----------------*/
 
 .bot-popis{
-    width: 35%;
+    width: 30%;
     position:absolute;
     top:50%;
     transform: translateY(-50%);
-    left: 7%;
+    left: 180px;
     color: black;
     padding-bottom: 25px;;
 }
@@ -449,6 +447,9 @@ width: 100%;
 }
 
 .cards2{
+    max-width: 1600px;
+    padding: 0 95px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -515,4 +516,103 @@ width: 100%;
 
 .card2 a:hover i{
     transform: translateX(40%);
+}
+
+/* ========================= FOOTER =========================*/
+
+footer{
+    background-color:rgb(243, 243, 243);
+    font-size: 12px;
+    color:rgb(109, 109, 109);
+}
+
+/* -----------footer top -------------------*/
+
+.footer-top{
+    display: flex;
+    max-width: 1600px;
+    padding: 0 95px;
+    margin: 0 auto;
+    padding-top:40px;
+    justify-content: space-between;
+}
+
+.footer-top h3{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color:rgb(109, 109, 109);
+}
+
+.footer-top ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-top ul li{
+    padding: 8px 0;
+}
+
+.footer-top ul li a{
+    text-decoration: none;
+    color:rgb(109, 109, 109);
+}
+
+.footer-card{
+    max-width: 242px;
+}
+
+.footer-top ul li a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+
+
+/* ------------ footer bot ----------------*/
+
+.footer-bot{
+    max-width: 1600px;
+    padding: 0 95px;
+    padding-top: 5px;
+    margin: 0 auto;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left{
+    display: flex;
+}
+
+.left span{
+    margin-left: 15px;
+}
+
+.right{
+    display: flex;
+}
+
+.right ul{
+    margin-right: 30px;
+}
+
+.right ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.right ul li a{
+    text-decoration: none;
+    color:rgb(109, 109, 109);
+}
+
+footer i{
+    position: relative;
+    top: 50%;
+}
+
+.right ul li a:hover{
+    text-decoration: underline;
+    color: black;
 }
