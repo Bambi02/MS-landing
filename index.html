@@ -7,11 +7,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microsoft - kopia oficialnej stranky</title>
 </head>
-<body>
+<body onload="playSlideshow(6000)">
     <header>
         <div class="wrapper">
             <nav>
-                <a href="#"><img src="./img/RE1Mu3b.png" alt="">
+
+                <div class="hamburger_div">
+                    <button class="open_hamburger">
+                        <div class="burger_line"></div>
+                        <div class="burger_line"></div>
+                        <div class="burger_line"></div>
+                    </button>
+                    <button class="close_hamburger">
+                        <div class="close_burger_line"></div>
+                        <div class="close_burger_line"></div>
+                    </button>
+                </div>
+
+                <div class="hamburger_menu">
+                    <ul>
+                        <li> <p>Microsoft 365</p></li>
+                        <li> <p>Office</p></li>
+                        <li> <p>Windows</p></li>
+                        <li> <p>Xbox</p></li>
+                        <li> <p>Podpora</p></li>
+                        <li> 
+                            <p>Softvér</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-up"></i>
+                            <ul>
+                                <li><p>Aplikácie systému Windows</p></li>
+                                <li><p>Outlook</p></li>
+                                <li><p>Microsoft Teams</p></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <p>Počítače a zariadenia</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-up"></i>
+                            <ul>
+                                <li><p>Kúpiť Xbox</p></li>
+                                <li><p>PCs a tablets</p></li>
+                                <li><p>Počítačové príslušenstvo</p></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <p>Zábava</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-up"></i>
+                            <ul>
+                                <li><p>Xbox Game Pass Ultimate</p></li>
+                                <li><p>Xbox Live Gold</p></li>
+                                <li><p>Xbox a hry</p></li>
+                                <li><p>Hry pre PC</p></li>
+                                <li><p>Hry per Windows</p></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <p>Podniky</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-up"></i>
+                            <ul>
+                                <li><p>Microsoft 365</p></li>
+                                <li><p>Microsoft Industry</p></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <p>Developer a IT</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-up"></i>
+                            <ul>
+                                <li><p>.NET</p></li>
+                                <li><p>Windows Server</p></li>
+                                <li><p>Dokumenty</p></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <p>Ostatné</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-up"></i>
+                            <ul>
+                                <li><p>Bezplatné súbory na prevziatie a zabezpečenie</p></li>
+                                <li><p>Vzdelanie</p></li>
+                                <li><p>Darčekové poukážky</p></li>
+                            </ul>
+                        </li>
+                        <li> <p>Zobraziť mapu stránky</p></li>
+                    </ul>
+                </div>
+
+                <a class="microsoft_logo" href="#"><img src="./img/RE1Mu3b.png" alt="">
 
                 <div class="lavy_nav">
                     <ul>
@@ -93,9 +178,9 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <li id="search-btn">
                             <a href="#" class="top-hide">Hľadať</a>
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-search lupa"></i>
                             <div class="podtrznik"></div>
                         </li>
                         <li>
@@ -117,18 +202,57 @@
     <main>
         <div class="wrapper">
             <div class="top-banner">
-                <img class="top-img" src="./img/RE1Eyde.webp" alt="">
-                <div class="top-popis">
+                <div class="images">
+                    <img class="top-img lightImg" id="prvy-img" src="./img/RE37lBy.webp" alt="">
+                    <img class="top-img darkImg" id="inner-img1" src="./img/RE1Eyde.webp" alt="">
+                    <img class="top-img lightImg" id="inner-img2" src="./img/RE37lBy.webp" alt="">
+                    <img class="top-img darkImg" id="posledny-img" src="./img/RE1Eyde.webp" alt="">
+                </div>
+                <div class="top-popis dark-left">
                     <h1>Xbox One X</h1>
                     <p>Najvýkonnejšia konzola na svete</p>
                     <a href="#">Kúpiť<i class="fas fa-angle-right"></i></a>
                 </div>
-                <button class="pravy">
-                    <i class="fas fa-angle-right"></i>
+                <div class="top-popis2 light-left">
+                    <h1>Toto je váš balík 365</h1>
+                    <p>Objavte, čo možno každý deň s balíkom Office 365 dokázať</p>
+                    <div class="top-popis2-tlacidla">
+                        <a href="#" id="btn6osob">Až pre 6 osôb<i class="fas fa-angle-right"></i></a>
+                        <a href="#" id="btn1osoba">Pre 1 osobu<i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="top-popis dark-right">
+                    <h1>Xbox One X</h1>
+                    <p>Najvýkonnejšia konzola na svete</p>
+                    <a href="#">Kúpiť<i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="top-popis2 light-right">
+                    <h1>Toto je váš balík 365</h1>
+                    <p>Objavte, čo možno každý deň s balíkom Office 365 dokázať</p>
+                    <div class="top-popis2-tlacidla">
+                        <a href="#" id="btn6osob">Až pre 6 osôb<i class="fas fa-angle-right"></i></a>
+                        <a href="#" id="btn1osoba">Pre 1 osobu<i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <button class="pravy posuvac">
+                    <i class="fas fa-angle-right" id="sipkvpravo"></i>
                 </button>
-                <button class="lavy">
+                <button class="lavy posuvac">
                     <i class="fas fa-angle-left"></i>
                 </button>
+                <div class="img-nav">
+                    <div class="img-selector">
+                        <div class="img1"></div>
+                        <div class="img2"></div>
+                    </div>
+                    <div class="play-pause">
+                        <div class="play-img"><i class="fas fa-play"></i></div>
+                        <div class="pause-img">
+                            <div class="pause1"></div>
+                            <div class="pause2"></div>
+                        </i></div>
+                    </div>
+                </div>
             </div>
 
             <div class="cards">
@@ -272,5 +396,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

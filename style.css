@@ -3,6 +3,7 @@
     font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+
 /*  ================================= TOP MENU =========================================  */
 
 nav{
@@ -11,6 +12,7 @@ nav{
     margin: 0 auto;
     display: flex;
     align-items: center;
+    flex-direction: row;
     height: 50px;
   
 }
@@ -25,7 +27,15 @@ nav img{
     flex:1;
 }
 
+.hamburger_menu{
+    display: none;
+}
+
 /* ---------- lava nav ----------*/
+
+.hamburger_div{
+    display: none;
+}
 
 .lavy_nav ul{
     float: left;
@@ -195,10 +205,16 @@ i{
 
 /*  ==================================== VRCHNY BANNER ==================================== */
 
-.top-banner img{
+
+.top-img{
     position: relative;
     width: 100%;
     cursor: pointer;
+    flex-shrink: 0;
+    left: -100%;
+    transition: all cubic-bezier(0.16,1,0.29,0.99) 170ms;
+    z-index: 2;
+
 }
 
 .top-banner{
@@ -207,8 +223,16 @@ i{
     margin: 0 auto;
     position: relative;
     margin-top: 2px;
-
+    background-clip: content-box;
 }
+
+/* ------------ image slider ----------*/
+.images{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
 
 /* ------------------popis top banner -----------------*/
 
@@ -216,14 +240,16 @@ i{
     position:absolute;
     top:50%;
     transform: translateY(-50%);
-    left: 180px;
+    left: 150px;
     color: white;
     padding-bottom: 25px;;
+    z-index: 3;
 }
 
 .top-popis h1{
     font-size: 3rem;
-    margin-bottom: 15px;;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .top-popis p{
@@ -263,13 +289,91 @@ i{
     transform: translateX(30%);
 }
 
+/*------------- popis pre office ------------*/
+
+.top-popis2{
+    position: absolute;
+    width: 500px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.top-popis2 h1{
+    padding-top: 20px;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.top-popis2 p{
+    padding-bottom: 20px;
+}
+
+/* -------- tlacidla pre office--------*/
+
+.top-popis2-tlacidla{
+    height: 39px;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-popis2-tlacidla a{
+    text-decoration: none;
+    padding: 9px 45px 9px 25px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: linear all 0.1s;
+    position: relative;
+    margin: 0 10px;
+    display: flex;
+}
+
+.top-popis2-tlacidla i{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
+    z-index: 5;
+    font-size: 1.2rem;
+    transition: linear all 0.1s;
+}
+
+.top-popis2-tlacidla a:hover{
+    text-decoration: underline 2px;
+    padding: 9px 50px 9px 20px;
+}
+
+.top-popis2-tlacidla a:hover i{
+    transform: translate(30%, -50%);
+}
+
+#btn1osoba{
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+}
+
+#btn1osoba i{
+    color: black;
+}
+
 /* ---------------------- lavy + pravy button ----------------*/
 
-.top-banner:hover button{
+.top-banner:hover .posuvac{
     display: block;
 }
 
-.top-banner button{
+.posuvac{
     display: none;
     position: absolute;
     height: 44px;
@@ -277,9 +381,10 @@ i{
     border-radius: 50%;
     border: none;
     background-color: rgb(46, 46, 46);
+    z-index: 3;
 }
 
-.top-banner button:hover{
+.posuvac:hover{
     background-color: rgb(70, 70, 70);
 }
 
@@ -287,7 +392,7 @@ i{
     position: relative;
     font-size: 2rem;
     z-index: 5;
-    color: white;
+    color: rgb(240, 240, 240);
     top: 0;
     left: 0;
 }
@@ -295,13 +400,126 @@ i{
 .pravy{
     top: 50%;
     transform: translateY(-50%);
-    right: 95px;
+    right: 68px;
 }
 
 .lavy{
     top: 50%;
     transform: translateY(-50%);
-    left: 95px;
+    left: 68px;
+}
+
+/*------------image navigation-------------------*/
+
+.img-nav{
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 3;
+}
+
+.img-selector{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 4 0 6px;
+}
+
+.img1, .img2{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.img1{
+    background-color: white;
+}
+
+.img1:hover, .img2:hover{
+    background-color: rgba(155, 155, 155, 0.651);
+}
+
+.play-pause{
+    height: 100%;
+    width: 50%;
+}
+
+.play-img{
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.play-img:hover{
+    background-color: white;
+}
+
+.play-img:hover .fa-play{
+    color: black;
+}
+
+.fa-play{
+    color: white;
+    font-size: 0.8rem;
+}
+
+.pause-img{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.pause1, .pause2{
+    background-color: white;
+    height: 35%;
+    width: 2px;
+}
+
+.pause-img:hover{
+    background-color: white;
+}
+
+.pause-img:hover .pause1, .pause-img:hover .pause2{
+    background-color: black;
+}
+
+/*---------popisy slidov---------*/
+.dark-left{
+    transform: translate(-100%, -50%);
+    opacity: 0;
+}
+
+.dark-right{
+    transform: translate(0, -50%);
+}
+
+.light-left{
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.light-right{
+    transform: translateX(0%);
+    opacity: 0;
 }
 
 /* =================== PRVY PANEL S KARTAMI ==================*/
@@ -423,16 +641,18 @@ width: 100%;
     text-transform: uppercase;
     font-weight: 600;
     transition: linear all 0.1s;
+    position: relative;
 }
 
 .bot-popis i{
     position: absolute;
     color: white;
-    top: 195px;
+    top: 50%;
     left: 115px;
     z-index: 5;
     font-size: 1.2rem;
     transition: linear all 0.1s;
+    transform: translateY(-50%);
 }
 
 .bot-popis a:hover{
@@ -441,7 +661,7 @@ width: 100%;
 }
 
 .bot-popis a:hover i{
-    transform: translateX(30%);
+    transform: translate(30%, -50%);
 }
 
 /* ====================================== SPODNE KARTY ==================================*/
@@ -642,16 +862,43 @@ footer i{
         left: -940px;
     }
 
-    .top-popis h1, .bot-popis h1{
+    .top-popis h1, .bot-popis h1, .top-popis2 h1{
         font-size: 1.5rem;
         font-weight: 600;
     }
 
-    .bot-popis i, .top-popis i{
+    .top-popis i{
         top: 100px;
     }
 
+    .top-popis2 h1{
+        padding-top: 70px;
+    }
+    
+    .top-popis2 p{
+        padding-bottom: 10px;
+    }
+
+    .bot-popis{
+        width: 60%;
+    }
+
 }
+
+@media only screen and (max-width: 1230px){
+    .dropdown-menu{
+        width: 1000px;
+        left: -780px;
+    }
+}
+
+@media only screen and (max-width: 1020px){
+    .dropdown-menu{
+        width: 800px;
+        right: -6000px;
+    }
+}
+
 
 @media only screen and (max-width: 1080px){
     nav{
@@ -660,10 +907,6 @@ footer i{
 
     .top-banner, .bot-banner{
         padding: 0;
-    }
-
-    .bot-popis i{
-        top: 120px;
     }
 
     .card, .card2{
@@ -699,17 +942,17 @@ footer i{
         padding: 30px 24px;
     }
 
-    .dropdown-menu{
-        width:1000px;
-        left: -725px;
-    }
-
-    .dropdown-stlpec{
-        flex: 30%;
-    }
 
     .top-popis, .bot-popis{
-        left:80px
+        left:60px
+    }
+
+    .bot-popis p{
+        font-size: 15px;
+    }
+
+    .dropdown-menu{
+        left: -720px;
     }
 
     .lavy{
@@ -719,7 +962,169 @@ footer i{
     .pravy{
         right: 0;
     }
+
+
+@media only screen and (max-width: 860px){
+    
+    nav{
+        padding: 0 15px;
+    }
+
+    .dropdown-main{
+        display: none;
+    }
+
+    .lavy_nav{
+        display: none;
+    }
+
+    .microsoft_logo{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #search-btn{
+        position: absolute;
+        left: 20px;
+        top: 7px;
+    }
+
+    .hamburger_div{
+        display: block;
+        height: 23px;
+        width: 23px;
+        padding: 0;
+    }
+
+    .close_hamburger{
+        position: relative;
+        display: none;
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .close_burger_line{
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(109, 109, 109);
+    }
+
+    .close_burger_line:first-child{
+        transform: rotate(45deg);
+    }
+
+    .close_burger_line:last-child{
+        transform: rotate(-45deg);
+    }
+
+    .open_hamburger{
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .burger_line{
+        width: 100%;
+        height: 2px;
+        background-color: rgb(109, 109, 109);
+    }
+
+    .hamburger_menu{
+        position: absolute;
+        display: none;
+        z-index: 500;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color:rgb(240, 240, 240) ;
+        border-bottom: solid black 1px;
+        border-top: solid rgb(221, 220, 220) 1px;
+    }
+
+
+    .hamburger_menu ul{
+        padding-left: 0;
+    }
+
+    .hamburger_menu li{
+        list-style: none;
+        padding: 15px 0;
+        cursor: pointer;
+        border-bottom: solid rgb(221, 220, 220) 1px;
+        position: relative;
+    }
+
+    .hamburger_menu ul li p{
+        margin-left: 15px;
+    }
+
+    .hamburger_menu i{
+        position: absolute;
+        float: right;
+        bottom: 50%;
+        font-size: 0.7em;
+        right: 10px;
+        color: rgb(70, 70, 70);
+ 
+    }
+
+    .hamburger_menu ul li p{
+        color: rgb(59, 59, 59);
+        width: 160px;
+    }
+
+    .hamburger_menu ul li ul{
+        display: none;
+        position: relative;
+        top: 16px;
+    }
+
+    .hamburger_menu ul li ul li{
+        margin-left: 10px;
+    }
+
+    .hamburger_menu ul li ul li p{
+        width: 400px;
+    }
+
+    .hamburger_menu ul li ul li:first-child{
+        border-top: solid rgb(221, 220, 220) 1px;
+        padding-left: 10px;
+        margin-left: 0;
+        border-bottom: none;
+    }
+
+    .hamburger_menu ul li ul li:nth-child(2){
+        border-top: solid rgb(221, 220, 220) 1px;
+    }
+
+    .fa-chevron-up{
+        opacity: 0;
+        transform: translateY(5%);
+    }
+
+    .menuOpen{
+        display: block !important;
+    }
+
+    .menuClosed{
+        display: none !important;
+    }
+
 }
+
 @media only screen and (max-width: 765px){
 
     .lavy_nav{
@@ -733,14 +1138,22 @@ footer i{
     }
 
     .top-banner{
-        height: 60vh;
-        background-color:rgb(46, 46, 46);;
+        height: 100vw;
+        min-height: 625px;
+        background-color:rgb(46, 46, 46);
+        position: relative;
     }
 
     .top-popis{
-        top: 75%;
+        top: 78%;
         left: 35%;
+        transform: translate(-50%, -50%);
         text-align: center;
+        position: absolute;
+    }
+
+    .top-popis2{
+        top: 50%;
     }
 
     .top-popis i{
@@ -748,20 +1161,31 @@ footer i{
     }
 
     .bot-banner{
-        height: 60vh;
+        height: 100vw;
+        min-height: 625px;
         background-color:rgb(231, 231, 231);
     }
 
     .bot-popis{
         width: auto;
-        top: 75%;
-        left: 30%;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
     }
 
-    .bot-popis i{
-        left: 210px;
-        top: 100px;
+    .bot-popis h1{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .bot-popis p{
+        width: 400px;
+    }
+
+    .cards{
+        padding: 0 30px;
+        margin-top: 30px;
     }
 
 }
@@ -782,14 +1206,38 @@ footer i{
     }
 
     .top-popis{
-        left: 30%;
+        left: 20%;
+        top: 68%;
+    }
+
+    .top-popis2{
+        top: 30%;
+    }
+
+    .top-popis2-tlacidla{
+        flex-direction: column;
+    }
+
+    .top-popis2 h1{
+        font-size: 21px;
+    }
+
+    .top-popis2 p{
+        width: 300px;
+        text-align: center;
     }
 
     .bot-popis{
-        left: 18%;
+        padding-bottom: 40px;
     }
 
+    .bot-popis p{
+        width: 300px;
+    }
+
+    .top-banner, .bot-banner{
+        min-height: 525px;
+    }
 
 }
-
-
+}
